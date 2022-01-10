@@ -40,7 +40,7 @@ class channelInfo():
 
 
                     if ((mid > 0) and (len(midLen) >= 16) and (uid < 0) and (data[0:4].hex() == '6258082b')):
-                        #print("this a channel creation")
+
                         chacreat = (data[16:20].hex())
                         chacreat = str(int((struct.pack('<L', int(chacreat, base=16))).hex(), 16))
                         name = abs(uid)
@@ -57,13 +57,11 @@ class channelInfo():
                         sql = "SELECT uid from channel_admins_v3 where did=" + name + ";"
                         cur.execute(sql)
                         admins = cur.fetchall()
-                        #admin_t = tuple(admins)
-                        #print(admin_t)
 
                         a = ""
                         count=0
                         for ad in admins:
-                            # print(ad[0])
+                            
                             adname = ad[0]
 
                             sql = "SELECT name from users where uid=" + str(
@@ -76,16 +74,6 @@ class channelInfo():
                             a=a+" ("+str(count)+") "
                             a=a+admin
 
-
-
-                            # if admins != None:
-                            #
-
-                        #print(mid, namef, timestamp,adminrrec)
-                        #print("channel admins are:")
-                        #print(adminrrec)
-                        # if admins != None:
-                        #print("________________________________________")
                             Empty=""
                         list.append(SortItems(str(namef), str(timestamp), str(a),Empty ))
 
