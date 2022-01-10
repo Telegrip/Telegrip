@@ -90,7 +90,7 @@ class Ui_MainWindow(QMainWindow):
 
         if column == 5:
 
-            # print("Row %d and Column %d was clicked" % (row, column))
+            
             index = (self.tableWidgetFiles.selectionModel().currentIndex())
             value = index.sibling(index.row(), index.column()).data()
 
@@ -737,7 +737,7 @@ class Ui_MainWindow(QMainWindow):
                 for oj in list_sorted:
                     if ("http" not in (oj.msg).lower()) and (oj.msg != "") and (searchTxt).lower() in (
                             oj.msg).lower():
-                        print(oj.msg)
+                        
 
                         item = QtWidgets.QTableWidgetItem()
                         item.setFlags(QtCore.Qt.ItemIsUserCheckable | QtCore.Qt.ItemIsEnabled)
@@ -1481,9 +1481,7 @@ class Ui_MainWindow(QMainWindow):
                         f.write(self.country)
                         f.close()
 
-                # # open and read the file after the appending:
-                # f = open("readme.txt", "r")
-                # print(f.read())
+                
 
 
 
