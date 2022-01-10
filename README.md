@@ -1,6 +1,6 @@
 ### Hi there 👋
 
-Telegrip is a digital forensic tool that deals with Telegram-related cases.
+Telegrip is a GUI digital forensic tool that deals with Telegram-related cases.
 
 Important notes:
 
