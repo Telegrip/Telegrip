@@ -68,8 +68,3 @@ class Track():
         except Error as e:
             print('Error', e)
         return Datalist
-
-
-
-# u=userTracking()
-# u.usr()
