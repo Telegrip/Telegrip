@@ -48,7 +48,7 @@ class Audio():
 
                             for rec in records:
                                 data = rec[4]
-                                #print(data.hex())
+                                
                                 if originalhex in data.hex():
 
 
@@ -123,15 +123,14 @@ class Audio():
                         mediaBlob = rec[4]
                         if ((mediaBlob[0:4].hex() != 'fa555555') and (rec[1] > 0)):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
+                            
                             sql = "SELECT * from messages where mid= " + str(midrec) + " and out= 1 ;"
                             cur = conn.cursor()
                             cur.execute(sql)
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+                                
                                 if originalhex in data.hex() and sentrec[4]!=0:
 
                                     msgID = (data[8:12].hex())  # hexa
@@ -194,15 +193,14 @@ class Audio():
                         mediaBlob = rec[4]
                         if ((mediaBlob[0:4].hex() != 'fa555555') and (rec[1] > 0)):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
+                            
                             sql = "SELECT * from messages where mid= " + str(midrec) + " and out= 0 ;"
                             cur = conn.cursor()
                             cur.execute(sql)
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+                                
                                 if originalhex in data.hex() and sentrec[4]!=0:
 
                                     msgID = (data[8:12].hex())  # hexa
@@ -256,15 +254,14 @@ class Audio():
                         mediaBlob = rec[4]
                         if ((mediaBlob[0:4].hex() != 'fa555555') and (rec[1] > 0)):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
+                            )
                             sql = "SELECT * from messages where mid= " + str(midrec) + " and out= 1 ;"
                             cur = conn.cursor()
                             cur.execute(sql)
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+                                
                                 if originalhex in data.hex() and sentrec[4]!=0:
 
                                     msgID = (data[8:12].hex())  # hexa
@@ -324,15 +321,14 @@ class Audio():
                         mediaBlob = rec[4]
                         if ((mediaBlob[0:4].hex() != 'fa555555') and (rec[1] > 0)):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
+                            
                             sql = "SELECT * from messages where mid= " + str(midrec) + " and out= 0 ;"
                             cur = conn.cursor()
                             cur.execute(sql)
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+                                
                                 if originalhex in data.hex() and sentrec[4]!=0:
 
                                     msgID = (data[8:12].hex())  # hexa
@@ -395,8 +391,7 @@ class Audio():
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+                                
                                 if originalhex in data.hex() and sentrec[4] != 0:
 
                                     msgID = sentrec[0]
@@ -461,15 +456,14 @@ class Audio():
                         midLen = str(mid)
                         if ((mid > 0) and (len(midLen) >= 16) and (uid < 0) and (mediaBlob[0:4].hex() != '6258082b')):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
+                            
                             sql = "SELECT * from messages where mid= " + str(midrec) + ";"
                             cur = conn.cursor()
                             cur.execute(sql)
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+                                
                                 if originalhex in data.hex() and sentrec[4] != 0:
 
                                     msgID = sentrec[0]
