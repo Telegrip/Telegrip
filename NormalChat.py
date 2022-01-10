@@ -41,7 +41,7 @@ class NormalChat():
                         out = rec[6]
                         midLen = str(mid)
                         if ((data[0:4].hex() != 'fa555555') and (data[0:4].hex() != '6258082b') and (out == 1) and (uid > 0)):
-                            # mid the same so mid = mid
+                            
                             senderID = (data[16:20].hex())
                             senderID = str(int((struct.pack('<L', int(senderID, base=16))).hex(), 16))
                             recivedID = (data[24:28].hex())
@@ -56,11 +56,6 @@ class NormalChat():
                                 if offset32 != 'fe' and len(msg) != 0:
                                     msg = (data[33:33 + res]).decode("utf-8")
                                     msgsize = getsizeof(msg)
-                                    # else:
-                                    #     offset33 = (data[33:36].hex())  # convert to hexa
-                                    #     res = int(offset33, 16)  # convert to decimal
-                                    #     msg = (data[36:36 + res]).decode("utf-8")
-                                    #     msgsize = len(msg)
 
                                     sql = "SELECT name from users where uid=" + senderID + ";"
                                     cur = conn.cursor()
@@ -79,7 +74,7 @@ class NormalChat():
 
 
                         elif ((data[0:4].hex() != 'fa555555') and (data[0:4].hex() != '6258082b') and (out == 0) and (uid != 777000) and (uid > 0) ):
-                            # mid the same so mid = mid
+                            
                             senderID = (data[16:20].hex())
                             senderID = str(int((struct.pack('<L', int(senderID, base=16))).hex(), 16))
                             reciver = "Host"
