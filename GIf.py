@@ -46,7 +46,7 @@ class GIF():
 
                            for rec in records:
                             data = rec[4]
-                            # print(data.hex())
+                            
                             if originalhex in data.hex():
 
                                if data[0:4].hex() == 'fa555555' and rec[2]!=0:
@@ -106,7 +106,7 @@ class GIF():
                         mediaBlob = rec[4]
                         if ((mediaBlob[0:4].hex() != 'fa555555') and (rec[1] > 0)):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
+                            
                             sql = "SELECT * from messages where mid= " + str(midrec) + " and out='1' ;"
                             cur = conn.cursor()
                             cur.execute(sql)
@@ -177,7 +177,7 @@ class GIF():
                                     mediaBlob = rec[4]
                                     if ((mediaBlob[0:4].hex() != 'fa555555') and (rec[1] > 0)):
                                         midrec = rec[0]
-                                        # print("msgID  "+str(midrec))
+                                        
                                         sql = "SELECT * from messages where mid= " + str(midrec) + " and out='0' ;"
                                         cur = conn.cursor()
                                         cur.execute(sql)
@@ -240,7 +240,7 @@ class GIF():
                         if ((mid > 0) and (len(midLen) >= 16) and (uid < 0) and (
                                 mediaBlob[0:4].hex() != '6258082b')):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
+                  
                             sql = "SELECT * from messages where mid= " + str(midrec) + ";"
                             cur = conn.cursor()
                             cur.execute(sql)
@@ -302,7 +302,7 @@ class GIF():
                                 mediaBlob[0:4].hex() != '6258082b') and (
                                 mediaBlob[0:4].hex() != 'fa555555') and (uid != 777000)):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
+                           
                             sql = "SELECT * from messages where mid= " + str(midrec) + ";"
                             cur = conn.cursor()
                             cur.execute(sql)
