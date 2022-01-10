@@ -53,7 +53,7 @@ class ParsingDoc():
 
                         for rec in records:
                             data = rec[4]
-                            #print(data.hex())
+                            
                             if originalhex in data.hex():
 
 
@@ -128,15 +128,14 @@ class ParsingDoc():
                         mediaBlob = rec[4]
                         if ((mediaBlob[0:4].hex() != 'fa555555') and (rec[1] > 0)):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
+                            
                             sql = "SELECT * from messages where mid=" + str(midrec) + " and out='1' ;"
                             cur = conn.cursor()
                             cur.execute(sql)
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+
                                 if originalhex in data.hex() and sentrec[4]!=0:
 
                                     msgID = (data[8:12].hex())  # hexa
