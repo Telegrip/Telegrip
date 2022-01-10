@@ -41,11 +41,9 @@ class Group():
                         data = rec[5]
                         midLen = str(mid)
 
-                        #print(mid)
+                        
                         if ((mid > 0) and (len(midLen) < 16) and (uid < 0) and (data[0:4].hex() != '6258082b') and (data[0:4].hex() != 'fa555555') and (uid != 777000)):
-                            #print(mid)
-                            #print("this is a group")
-                            # mid the same so mid = mid
+
                             senderID = (data[16:20].hex())
                             senderID = str(int((struct.pack('<L', int(senderID, base=16))).hex(), 16))
                             name = abs(uid)
@@ -53,7 +51,7 @@ class Group():
                             timestamp = rec[4]
                             timestamp = time.strftime('%A %B %d, %Y %I:%M:%S %p', time.localtime(timestamp))
                             offset32 = (data[32:33].hex())  # hexa value of offset32
-                            #print(mid)
+                            
                             if offset32 != '':
                                 res = int(offset32, 16)  # convert to decimal
                                 msg = data[33:33 + res]
@@ -77,8 +75,7 @@ class Group():
                                 senderrec = cur.fetchone()
                                 sender = senderrec[0]
 
-                                #print(mid, namef, sender, timestamp, msgsize, msg)
-                               # print("________________________________________")
+                                
                                 if msgsize != 0:
                                  list.append(SortItems(str(mid), str(sender), str(namef), str(timestamp), str(msgsize)+" B", msg))
 
