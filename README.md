@@ -20,3 +20,4 @@ Telegrip provides several features:
 5. Telegrip provides the feature of saving the digital case as a password-protected, where the passwords are securely stored using a salted hash.
 
 
+By: Norah Alkhathlan, Deema Almassary, Sara Aldossary, Rowida Bajuiffer, and Nourah Bin Fhaid
