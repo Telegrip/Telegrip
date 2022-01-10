@@ -73,7 +73,7 @@ class SecretChat():
                         cur.execute(sql)
                         recivedrec = cur.fetchone()
                         recivedname = recivedrec[0]
-                   # print(str(msgID) + "\t\t" + str(sendername) +"\t\t"+ str(recivedname) + "\t\t\t\t"+ str(timestamp)+"\t\t"+str(msgsize)+"\t\t"+msg)
+
 
                     list.append(SortItems(str(msgID), str(sendername) , str(recivedname) , str(timestamp) ,str(msgsize)+" B",msg))
 
