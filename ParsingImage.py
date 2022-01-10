@@ -56,7 +56,6 @@ class ParsingImage():
                             for rec in records:
                                 data = rec[4]
 
-                                # print(data.hex())
                                 if originalhex in data.hex():
 
                                     if data[0:4].hex() == 'fa555555' and rec[2]!=0:
@@ -90,8 +89,7 @@ class ParsingImage():
                                         list.append(
                                             SortItems(str(msgID), str(sendername), str(recivedname), str(timestamp),
                                                       str(file), str(Patth), str(type)))
-                                        # os.system("start " + ImagePath)
-                                        # os.startfile(ImagePath, 'open')
+
 
 
 
@@ -150,8 +148,7 @@ class ParsingImage():
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+
                                 if originalhex in data.hex() and sentrec[4]!=0:
 
                                     msgID = (data[8:12].hex())  # hexa
@@ -182,8 +179,7 @@ class ParsingImage():
                                     list.append(
                                         SortItems(str(msgID), str(sendername), str(recivedname), str(timestamp),
                                                   str(file), str(Patth),str(typeM)))
-                                    # os.system("start " + VedioPath)
-                                    # os.startfile(ImagePath, 'open')
+
 
 
 
@@ -234,24 +230,19 @@ class ParsingImage():
                         mediaBlob = rec[4]
                         if ((mediaBlob[0:4].hex() != 'fa555555') and (rec[1] > 0)):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
                             sql = "SELECT * from messages where mid=" + str(midrec) + " and out='0' ;"
                             cur = conn.cursor()
                             cur.execute(sql)
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+
                                 if originalhex in data.hex() and sentrec[4]!=0:
 
                                     msgID = (data[8:12].hex())  # hexa
                                     msgID = int((struct.pack('<L', int(msgID, base=16))).hex(), 16)
                                     senderID = (data[16:20].hex())
                                     senderID = str(int((struct.pack('<L', int(senderID, base=16))).hex(), 16))
-
-                                    # recivedID = (data[24:28].hex())
-                                    # recivedID = str(int((struct.pack('<L', int(recivedID, base=16))).hex(), 16))
                                     timestamp = sentrec[4]
                                     timestamp = time.strftime('%A %B %d, %Y %I:%M:%S %p', time.localtime(timestamp))
 
@@ -271,8 +262,7 @@ class ParsingImage():
                                     list.append(
                                         SortItems(str(msgID), str(sendername), str(recivedname), str(timestamp),
                                                   str(file), str(Patth), str(typeM)))
-                                    # os.system("start " + VedioPath)
-                                    # os.startfile(ImagePath, 'open')
+
 
 
 
@@ -327,15 +317,13 @@ class ParsingImage():
                         midLen = str(mid)
                         if ((mid > 0) and (len(midLen) < 16) and (uid < 0) and (mediaBlob[0:4].hex() != '6258082b') and (mediaBlob[0:4].hex() != 'fa555555') and (uid != 777000)):
                             midrec = rec[0]
-                            # print("msgID  "+str(midrec))
                             sql = "SELECT * from messages where mid=" + str(midrec) + ";"
                             cur = conn.cursor()
                             cur.execute(sql)
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+
                                 if originalhex in data.hex() and sentrec[4]!=0:
 
                                     msgID = sentrec[0]
@@ -427,8 +415,7 @@ class ParsingImage():
                             sentrec = cur.fetchone()
                             if sentrec != None:
                                 data = sentrec[5]
-                                # print("blob "+data.hex())
-                                # print("vedio "+originalhex)
+
                                 if originalhex in data.hex() and sentrec[4]!=0:
 
                                     msgID = sentrec[0]
