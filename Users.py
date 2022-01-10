@@ -54,8 +54,6 @@ class Users():
                             value = rec[3]
                             for i in range(0, len(value)):
                                 hexx = value[i]
-                                # digit = value[i - 1]
-                                # digit = hex(digit)[2:]
                                 hexx = hex(hexx)[2:]
                                 if hexx == 'c':
                                     Phone = (value[i + 1:i + 13]).decode("utf-8")
@@ -67,14 +65,3 @@ class Users():
         except Error as e:
             print('Error', e)
         return Datalist
-
-
-
-
-
-
-#
-# u=Users()
-# u.LoadUsers()
-# except Error as e:
-#     print('Error', e)
