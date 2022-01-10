@@ -39,16 +39,13 @@ class channel():
                         midLen = str(mid)
 
                         if ((mid > 0) and (len(midLen) >= 16) and (uid < 0) and (data[0:4].hex() != '6258082b')):
-                            #print("this is a channel")
-                            # print(mid)
-                            # senderID = (data[16:20].hex())
-                            # senderID = str(int((struct.pack('<L', int(senderID, base=16))).hex(), 16))
+
                             name = abs(uid)
                             name = str(name)
                             timestamp = rec[4]
                             timestamp = time.strftime('%A %B %d, %Y %I:%M:%S %p', time.localtime(timestamp))
                             offset32 = (data[24:25].hex())  # hexa value of offset32
-                            #print(mid)
+
                             if offset32 != '':
                                 res = int(offset32, 16)  # convert to decimal
                                 msg = data[25:25 + res]
@@ -66,15 +63,7 @@ class channel():
                                 cur.execute(sql)
                                 namerrec = cur.fetchone()
                                 namef = namerrec[0]
-                                #print("________________________________________")
-                                # sql = "SELECT name from users where uid=" + senderID + ";"
-                                # cur = conn.cursor()
-                                # cur.execute(sql)
-                                # senderrec = cur.fetchone()
-                                # sender = senderrec[0]
 
-                               # print(mid, namef, timestamp, msgsize, msg)
-                                #print("________________________________________")
                                 if msgsize !=0 :
                                  list.append(SortItems(str(mid), str(namef), str(timestamp), str(msgsize)+" B", msg))
 
