@@ -458,10 +458,6 @@ class Ui_Saveas(QMainWindow):
 
 
     def zip_folderPyzipper(self,folder_path, output_path,name):  # add the cache4.db
-       """Zip the contents of an entire folder (with that folder included
-        in the archive). Empty subfolders will be included in the archive
-        as well.
-        """
 
        dir=os.getcwd()
        work_dir=os.path.join(dir,'dump')
