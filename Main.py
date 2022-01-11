@@ -1,4 +1,4 @@
-#Built by: Norah Alkhathlan, Deema Almassary, Sara Aldossary, Rowida Bajuiffer, and Nourah Bin Fhaid
+#Built by: Norah Alkhathlan, Deema Almassary, Nourah Bin Fhaid, Sara Aldossary, and Rowida Bajuiffer
 import os
 import time
 from pathlib import Path
