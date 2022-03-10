@@ -21,6 +21,3 @@ Important notes:
 
 - Telegrip tool was built to work with Telegram version (v7.4.1), rooted Samsung Galaxy S6 edge with version 7.0 (Nougat) of Android operating system.
 - Telegrip requires a database to store the case's information.
-
-
-By: Norah Alkhathlan, Deema Almassary, Nourah Bin Fhaid, Sara Aldossary, and Rowida Bajuiffer 
